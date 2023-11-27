@@ -13,6 +13,7 @@
     />
   </head>
   <body>
+    <navbar :pages="pages" :active-page="activePage"></navbar>
     <!-- <div id="content" class="container">
       <h1>{{pages[activePage].pageTitle}}</h1>
       <p>{{pages[activePage].content}}</p>
@@ -116,6 +117,11 @@
       </div>
     </nav>
         `,
+        data() {
+          return {
+            theme: "light",
+          };
+        },
       });
 
       app.mount("body");
