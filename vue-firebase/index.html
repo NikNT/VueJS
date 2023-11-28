@@ -15,7 +15,19 @@
       <button @click="age = 46">Reset</button>
       <div @click="changeTitle('AtomicHabits')">ChangeBookTitle</div>
       <div v-if="showBooks">
-        <p>List of Books</p>
+        <div>
+          <ul>
+            <li
+              v-for="(book, index) in books"
+              :class="{fav : book.isFav}"
+              @click="toggleFav(index)"
+            >
+              <img :src="book.img" :alt="book.title" />
+              <h3>{{book.title}}</h3>
+              <p>{{book.author}}</p>
+            </li>
+          </ul>
+        </div>
       </div>
       <button @click="toggleShowBooks">
         <span v-if="showBooks">Hide Books</span>
@@ -28,6 +40,8 @@
       <div class="box" @mouseleave="handleEvent">mouseleave</div>
       <div class="box" @dblclick="handleEvent">doubleClick</div>
       <div class="box" @mousemove="handleMousemove">{{x}} : {{y}}</div>
+      <!-- Attribute Binding -->
+      <a :href="url">Website</a>
     </div>
     <script src="app.js"></script>
   </body>
