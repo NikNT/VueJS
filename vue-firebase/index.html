@@ -18,7 +18,7 @@
         <div>
           <ul>
             <li
-              v-for="(book, index) in books"
+              v-for="(book, index) in filteredBooks"
               :class="{fav : book.isFav}"
               @click="toggleFav(index)"
             >
